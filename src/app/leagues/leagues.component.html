@@ -1,0 +1,21 @@
+<a [routerLink]="['../league-form']"><button type="button" class="btn btn-outline-dark">Dodaj lige</button></a>
+<div>
+  <table>
+   <tr>
+     <th>leagueId</th>
+     <th>leagueName</th>
+     <th>Show details</th>
+     <th>Delete</th>
+   </tr>
+    <tr *ngFor="let league of leagues">
+        <td>{{league.leagueId}}</td>
+        <td>{{league.leagueName}}</td>
+        <td><button type="button" class="btn btn-outline-info">Pokaż detale</button></td>
+        <td><a><button type= "button" class="btn btn-outline-info" >Dołącz</button></a></td>
+        <td><a [routerLink]="['../leagues']"><button type="button" class="btn btn-outline-danger" (click)="delete(league.leagueId)">Usun</button></a></td>
+      </tr>
+
+  </table>
+</div>
+
+

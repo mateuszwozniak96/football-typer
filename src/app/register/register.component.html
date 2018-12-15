@@ -1,0 +1,33 @@
+<div>
+  <form (ngSubmit)="register()">
+    <div class="form-group">
+      <label for="login">Login</label>
+    <input type="text" required [(ngModel)]="user.login" class="form-control" name="login" />
+  </div>
+  <div class="form-group">
+    <label for="password">Password</label>
+  <input type="password" [(ngModel)]="user.password" class="form-control" name="password" />
+</div>
+<div class="form-group">
+  <label for="confirmedPassword">Confirm Password</label>
+<input type="password" [(ngModel)]="confirmedPassword" class="form-control" name="confirmedPassword" />
+</div>
+  <div class="form-group">
+      <label for="email">Email</label>
+      <input type="text" [(ngModel)]="user.email" class="form-control" name="email" />
+  </div>
+
+    <div class="form-group">
+        <label for="firstName">First Name</label>
+        <input type="text" [(ngModel)]="user.firstName" class="form-control" name="firstName" />
+      </div>
+
+    <div class="form-group">
+        <label for="lastName">Last Name</label>
+        <input type="text" [(ngModel)]="user.lastName" class="form-control" name="lastName" />
+      </div>
+
+<a [routerLink]="['../']"><button type="button" class="btn btn-info" (click)="register()">Zarejestruj się</button></a>
+<p class="message">Already registered? <a [routerLink]="['/login']">Sign In</a></p>
+  </form>
+</div>

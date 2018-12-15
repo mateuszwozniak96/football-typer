@@ -1,0 +1,33 @@
+<button type="button" class="btn btn-success" (click)="getMatches(queueNumber,2021)">Premier League</button>
+<button type="button" class="btn btn-success" (click)="getMatches(queueNumber,2014)">Primera Division</button>
+<button type="button" class="btn btn-success" (click)="getMatches(queueNumber,2002)">Bundesliga</button>
+<button type="button" class="btn btn-success" (click)="getMatches(queueNumber,2019)">Serie A</button>
+<button type="button" class="btn btn-success" (click)="getMatches(queueNumber,2015)">Ligue 1</button>
+<button type="button" class="btn btn-success" (click)="getMatches(queueNumber,2001)">Champions League</button>
+<input type="text" [(ngModel)]="queueNumber" (change)="getMatches(queueNumber,leagueId)">
+
+<h3>Queue {{activeQueue}}</h3>
+<table>
+  <tr>
+  <th>id</th>
+  <th>Home team</th>
+  <th>Away team</th>
+  <th>Date</th>
+  <th>Status</th>
+</tr>
+<tr *ngFor="let match of matches" >
+
+    <td>{{match.id}}</td>
+    <td>{{match.homeTeam.name}}</td>
+    <td>{{match.awayTeam.name}}</td>
+    <td>{{match.utcDate}}</td>
+    <div *ngIf="match.status === 'FINISHED'; else inProgres">
+       <span>{{match.score.fullTime.homeTeam}}:{{match.score.fullTime.awayTeam}}</span>
+    </div>
+    <ng-template #inProgres>
+      <td><button type="button" class="btn btn-outline-dark">Dodaj</button></td>
+    </ng-template>
+
+
+</tr>
+</table>

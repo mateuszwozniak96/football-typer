@@ -1,0 +1,14 @@
+<h3>Moje ligi:</h3>
+<table>
+  <tr>
+    <th>Nazwa ligi: </th>
+    <th>Punkty: </th>
+  </tr>
+    <tr *ngFor = "let membership of memberships">
+      <td>{{membership.league.leagueName}}</td>
+      <td>{{membership.points}}</td>
+      <div *ngIf="membership.isAdmin===true">
+        <button>Administruj</button>
+      </div>
+  </tr>
+</table>

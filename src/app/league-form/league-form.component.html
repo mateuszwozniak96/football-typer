@@ -1,0 +1,7 @@
+<form>
+  <div class="form-group">
+    <input type="text" placeholder="Nazwa" [(ngModel)]="league.leagueName" name="leagueName">{{league.leagueName}}
+  </div>
+  <a [routerLink]="['../league-form-success']"><button class="btn btn-outline-dark" type="button" (click) = "addLeague()">Dodaj lige</button></a>
+</form>
+s

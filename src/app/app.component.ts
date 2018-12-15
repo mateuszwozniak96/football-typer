@@ -1,3 +1,4 @@
+import { HttpService } from './http.service';
 import { Component } from '@angular/core';
 
 @Component({
@@ -7,4 +8,6 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'football-typer';
+  isLogin = false;
+  constructor(private httpService: HttpService) {}
 }

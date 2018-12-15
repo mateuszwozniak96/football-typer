@@ -1,0 +1,11 @@
+<div class="login-page">
+    <div class="form">
+      <form class="login-form">
+        <input type="text" placeholder="username"/>
+        <input type="password" placeholder="password"/>
+        <button>login</button>
+        <button (click)="login()">Go next</button>
+        <p class="message">Not registered? <a [routerLink]="['register']"><button (click)="login()">Create an account</button></a></p>
+      </form>
+    </div>
+  </div>
